@@ -1,6 +1,11 @@
 import ee
 ee.Authenticate()
 ee.Initialize(project='wiai-krishi-dss')
+
+shapefile_path = '/home/abhijeetreddy/dataextraction/data/GT_Data/GT_MP_2023-24.shp'
+shapefile_fc = ee.FeatureCollection('path_to_your_shapefile')
+ee.data.createAsset({'type': 'table', 'name': 'INDIA_DISTRICTS'}, shapefile_fc)
+
 districtList = ['Barwani', 'Jhabua', 'Dindori', 'Alirajpur',
        'Narsimhapur', 'Singrauli', 'Seoni', 'Rewa', 'Rajgarh', 'Panna',
        'Chhindwara', 'Bhind', 'Gwalior', 'Shivpuri', 'Sheopur', 'Damoh',
